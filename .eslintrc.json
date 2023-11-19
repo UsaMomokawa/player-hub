@@ -1,3 +1,6 @@
 {
-  "extends": "plugin:github/recommended"
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended"
+  ]
 }
