@@ -1,0 +1,17 @@
+.menu-button {
+  border-radius: 100%;
+  outline: 2px solid var(--stone-200);
+  background-color: var(--white);
+  color: var(--stone-500);
+  padding: 12px;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.menu-button:hover {
+  background-color: var(--stone-100);
+}
+
+.menu-button--primary {
+  background-color: var(--stone-100);
+}

@@ -8,6 +8,13 @@ const config: Config = {
     "./src/stories/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    colors: {
+      white: "#ffffff",
+      warm: {
+        50: "#F7F4F2",
+        600: "#C63D2F",
+      },
+    },
     extend: {
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
