@@ -1,18 +1,22 @@
 import type { Meta, StoryObj } from "@storybook/react"
-import { Input } from "@/components/Input"
+import { Card } from "@/components/Card"
 
 const meta = {
-  title: "TextInput",
-  component: Input,
+  title: "Card",
+  component: Card,
   tags: ["autodocs"],
   args: {
-    label: "名前",
-    value: "翡翠 玲夢",
+    href: "/",
+    imgSrc: "/bio-portrait.png",
+    label: "翡翠 玲夢",
   },
   parameters: {
     layout: "centered",
   },
-} satisfies Meta<typeof Input>
+  argTypes: {
+    onClick: { action: "clicked" },
+  },
+} satisfies Meta<typeof Card>
 
 export default meta
 type Story = StoryObj<typeof meta>
