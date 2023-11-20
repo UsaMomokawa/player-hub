@@ -1,10 +1,8 @@
 import "@/styles/Button.css"
+import { twMerge } from "tailwind-merge"
 
 interface ButtonProps {
   primary?: boolean
-  backgroundColor?: string
-  textColor?: string
-  outlineColor?: string
   size?: "small" | "medium" | "large"
   label: string
   onClick?: () => void
@@ -13,27 +11,25 @@ interface ButtonProps {
 export const Button = ({
   primary = false,
   size = "medium",
-  backgroundColor = "#ffffff",
-  textColor = "#1C1917",
-  outlineColor = "#d6d3d1",
   label,
   ...props
 }: ButtonProps) => {
-  const mode = primary ? "button--primary" : "button--secondary"
+  const mode = primary ? "bg-stone-100" : ""
   return (
     <button
       type="button"
-      className={["button", `button--${size}`, mode].join(" ")}
+      className={twMerge(
+        "inline-block",
+        "outline outline-2 rounded-full outline-stone-200",
+        "bg-white hover:bg-stone-100",
+        "text-stone-800",
+        "cursor-pointer",
+        `button--${size}`,
+        mode,
+      )}
       {...props}
     >
       {label}
-      <style jsx>{`
-        button {
-          background-color: ${backgroundColor};
-          color: ${textColor};
-          outline-color: ${outlineColor};
-        }
-      `}</style>
     </button>
   )
 }

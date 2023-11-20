@@ -8,6 +8,10 @@ const meta = {
   parameters: {
     layout: "centered",
   },
+  argTypes: {
+    onClick: { action: "clicked" },
+    primary: { control: "boolean" },
+  },
 } satisfies Meta<typeof Button>
 
 export default meta
