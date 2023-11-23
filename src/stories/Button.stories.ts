@@ -14,6 +14,7 @@ const meta = {
   argTypes: {
     onClick: { action: "clicked" },
     primary: { control: "boolean" },
+    disabled: { control: "boolean" },
   },
 } satisfies Meta<typeof Button>
 
@@ -27,6 +28,12 @@ export const Primary: Story = {
 }
 
 export const Secondary: Story = {}
+
+export const Disabled: Story = {
+  args: {
+    disabled: true,
+  },
+}
 
 export const Large: Story = {
   args: {

@@ -3,6 +3,7 @@ import { twMerge } from "tailwind-merge"
 
 interface ButtonProps {
   primary?: boolean
+  disabled?: boolean
   size?: "small" | "medium" | "large"
   label: string
   onClick?: () => void
@@ -10,6 +11,7 @@ interface ButtonProps {
 
 export const Button = ({
   primary = false,
+  disabled = false,
   size = "medium",
   label,
   ...props
@@ -25,8 +27,10 @@ export const Button = ({
         "text-stone-800",
         "cursor-pointer",
         `button--${size}`,
+        "disabled:cursor-not-allowed disabled:bg-stone-200 disabled:text-stone-400",
         mode,
       )}
+      disabled={disabled}
       {...props}
     >
       {label}
