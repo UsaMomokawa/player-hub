@@ -7,6 +7,7 @@ const meta = {
   tags: ["autodocs"],
   args: {
     label: "Button",
+    disabled: false,
   },
   parameters: {
     layout: "centered",

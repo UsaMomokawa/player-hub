@@ -16,18 +16,15 @@ export const Button = ({
   label,
   ...props
 }: ButtonProps) => {
-  const mode = primary ? "bg-stone-100" : ""
+  const mode = primary ? "primary" : ""
   return (
     <button
       type="button"
       className={twMerge(
-        "inline-block",
-        "outline outline-2 rounded-full outline-stone-200",
-        "bg-white hover:bg-stone-100",
-        "text-stone-800",
-        "cursor-pointer",
-        `button--${size}`,
+        "inline-block outline outline-2 rounded-full outline-stone-200",
+        "bg-white hover:bg-stone-100 text-stone-800 cursor-pointer duration-500",
         "disabled:cursor-not-allowed disabled:bg-stone-200 disabled:text-stone-400",
+        `button--${size}`,
         mode,
       )}
       disabled={disabled}

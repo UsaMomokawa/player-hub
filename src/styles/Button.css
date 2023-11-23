@@ -12,3 +12,21 @@
   font-size: 1.25rem;
   padding: 0.5rem 2rem;
 }
+
+.primary {
+  background-color: var(--stone-800);
+  outline: none;
+  color: var(--warm-50);
+}
+
+.primary:hover {
+  background-color: var(--stone-500);
+  outline: none;
+  color: var(--warm-50);
+}
+
+.primary:disabled {
+  background-color: var(--stone-300);
+  outline: none;
+  color: var(--white);
+}
