@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/react"
-import { Button } from "@/components/MenuButton"
+import { MenuButton } from "@/components/MenuButton"
 
 const meta = {
   title: "Button/MenuButton",
-  component: Button,
+  component: MenuButton,
   tags: ["autodocs"],
   parameters: {
     layout: "centered",
@@ -12,7 +12,7 @@ const meta = {
     onClick: { action: "clicked" },
     primary: { control: "boolean" },
   },
-} satisfies Meta<typeof Button>
+} satisfies Meta<typeof MenuButton>
 
 export default meta
 type Story = StoryObj<typeof meta>

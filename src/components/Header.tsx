@@ -3,13 +3,13 @@ import { MenuButton } from "./MenuButton"
 import { BackButton } from "./BackButton"
 
 interface HeaderProps {
-  backButton: boolean
+  hasBackButton?: boolean
   onMenuClick?: () => void
   onBackClick?: () => void
 }
 
 export const Header = ({
-  backButton = false,
+  hasBackButton = false,
   onMenuClick,
   onBackClick,
 }: HeaderProps) => {
@@ -17,12 +17,12 @@ export const Header = ({
     <header>
       <div
         className={twMerge(
-          "flex flex-row-reverse p-6 items-center justify-between",
+          "sticky flex flex-row-reverse p-6 items-center justify-between",
           "bg-white",
         )}
       >
         <MenuButton onClick={onMenuClick} />
-        {backButton && <BackButton onClick={onBackClick} />}
+        {hasBackButton && <BackButton onClick={onBackClick} />}
       </div>
     </header>
   )

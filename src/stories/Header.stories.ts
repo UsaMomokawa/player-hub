@@ -9,7 +9,7 @@ const meta = {
     layout: "fullscreen",
   },
   argTypes: {
-    backButton: { control: "boolean" },
+    hasBackButton: { control: "boolean" },
     onMenuClick: { action: "menuButtonClicked" },
     onBackClick: { action: "backButtonClicked" },
   },
@@ -20,12 +20,12 @@ type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
   args: {
-    backButton: false,
+    hasBackButton: false,
   },
 }
 
 export const WithBackButton: Story = {
   args: {
-    backButton: true,
+    hasBackButton: true,
   },
 }
