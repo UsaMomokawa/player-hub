@@ -9,9 +9,6 @@ const meta = {
     label: "通過シナリオ",
     values: ["hogohoge", "fugafuga", "piyopiyo"],
   },
-  parameters: {
-    layout: "centered",
-  },
 } satisfies Meta<typeof List>
 
 export default meta

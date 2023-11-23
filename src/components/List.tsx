@@ -7,10 +7,10 @@ interface ListProps {
 
 export const List = ({ label, values, ...props }: ListProps) => {
   return (
-    <>
+    <div className="mx-auto my-8">
       <div
         className={twMerge(
-          "px-6 py-3",
+          "px-2 py-3",
           "rounded-t-2xl border-2 border-b-0 border-stone-300",
           "bg-warm-50",
         )}
@@ -19,7 +19,7 @@ export const List = ({ label, values, ...props }: ListProps) => {
       </div>
       <ul
         className={twMerge(
-          "px-6 pb-3",
+          "px-2 pb-3",
           "rounded-b-2xl border-2 border-t-0 border-stone-300",
         )}
       >
@@ -33,6 +33,6 @@ export const List = ({ label, values, ...props }: ListProps) => {
           </li>
         ))}
       </ul>
-    </>
+    </div>
   )
 }
