@@ -9,15 +9,29 @@
     "lint": "next lint",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "test": "jest --passWithNoTests"
+    "test": "jest --passWithNoTests",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "dependencies": {
+    "@heroicons/react": "^2.0.18",
     "next": "14.0.3",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "tailwind-merge": "^2.0.0"
   },
   "devDependencies": {
     "@next/eslint-plugin-next": "^14.0.3",
+    "@storybook/addon-backgrounds": "^7.5.3",
+    "@storybook/addon-essentials": "^7.5.3",
+    "@storybook/addon-interactions": "^7.5.3",
+    "@storybook/addon-links": "^7.5.3",
+    "@storybook/addon-onboarding": "^1.0.8",
+    "@storybook/addon-styling-webpack": "^0.0.5",
+    "@storybook/blocks": "^7.5.3",
+    "@storybook/nextjs": "^7.5.3",
+    "@storybook/react": "^7.5.3",
+    "@storybook/testing-library": "^0.2.2",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
@@ -26,9 +40,11 @@
     "autoprefixer": "^10.0.1",
     "eslint": "^8.54.0",
     "eslint-config-next": "14.0.3",
+    "eslint-plugin-storybook": "^0.6.15",
     "jest": "^29.7.0",
     "postcss": "^8",
     "prettier": "3.1.0",
+    "storybook": "^7.5.3",
     "tailwindcss": "^3.3.0",
     "typescript": "^5.2.2"
   }
