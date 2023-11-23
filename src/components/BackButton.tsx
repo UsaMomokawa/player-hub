@@ -6,7 +6,7 @@ interface ButtonProps {
   onClick?: () => void
 }
 
-export const Button = ({ primary = false, ...props }: ButtonProps) => {
+export const BackButton = ({ primary = false, ...props }: ButtonProps) => {
   const mode = primary ? "bg-stone-100" : ""
   return (
     <button
