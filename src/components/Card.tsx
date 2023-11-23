@@ -14,13 +14,18 @@ export const Card = ({ href, imgSrc = "", label, ...props }: CardProps) => {
     <Link
       href={href}
       className={twMerge(
-        "flex flex-col justify-end items-center h-56 w-40 rounded-lg",
-        "border-2 border-stone-200",
+        "flex flex-col justify-end items-center rounded-lg",
         "drop-shadow-sm",
       )}
       {...props}
     >
-      <div className="relative overflow-hidden bg-warm-50">
+      <div
+        className={twMerge(
+          "relative overflow-hidden h-40 w-40 rounded-t-lg",
+          "border-2 border-b-0 border-stone-200",
+          "bg-warm-50",
+        )}
+      >
         <div className="h-full w-full absolute"></div>
         <Image
           src={imgSrc}
@@ -34,7 +39,7 @@ export const Card = ({ href, imgSrc = "", label, ...props }: CardProps) => {
       <p
         className={twMerge(
           "inline-block text-center w-full py-3 rounded-b-lg",
-          "border-t-2 border-stone-200",
+          "border-2 border-t-0 border-stone-200",
           "text-stone-800",
           "bg-white",
         )}
