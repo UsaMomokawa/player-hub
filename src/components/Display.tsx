@@ -21,7 +21,7 @@ export const Display = ({ imgSrc = "" }: DisplayProps) => {
           <p className="text-xs leading-4">ひすい れむ</p>
           <p className="font-semibold text-xl leading-none">翡翠 玲夢</p>
         </div>
-        <div className="z-40 right-3 bottom-0 absolute h-full max-w-fit flex">
+        <div className="z-40 right-4 bottom-0 absolute h-full max-w-fit flex">
           <Image
             src={imgSrc}
             priority={true}
