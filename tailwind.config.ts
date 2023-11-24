@@ -19,6 +19,12 @@ const config: Config = {
           600: "#C63D2F",
         },
       },
+      fontSize: {
+        xs: ["10px", "20px"],
+        sm: ["14px", "28px"],
+        base: ["18px", "28px"],
+        "3xl": ["32px", "40px"],
+      },
     },
   },
   plugins: [],

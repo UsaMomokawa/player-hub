@@ -7,7 +7,7 @@ interface ListProps {
 
 export const List = ({ label, values, ...props }: ListProps) => {
   return (
-    <div className="mx-auto my-8">
+    <div className="mx-auto">
       <div
         className={twMerge(
           "px-2 py-3",
