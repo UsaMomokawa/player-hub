@@ -25,3 +25,21 @@ button {
   --stone-500: #78716c;
   --stone-800: #292524;
 }
+
+.checker-pattern {
+  background: repeating-linear-gradient(
+      0deg,
+      var(--stone-300),
+      var(--stone-300) 1px,
+      transparent 1px,
+      transparent 20px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      var(--stone-300),
+      var(--stone-300) 1px,
+      transparent 1px,
+      transparent 20px
+    );
+  background-size: 20px 20px;
+}

@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <>
-      <div className="bg-warm-50">
+      <div className="checker-pattern">
         <Display imgSrc="/sample.png" />
       </div>
       <div className="max-w-xl mx-auto px-6 sm:px-24">
