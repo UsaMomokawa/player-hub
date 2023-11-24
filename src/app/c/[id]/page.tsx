@@ -1,6 +1,7 @@
 import { Metadata } from "next"
 import { Table } from "@/components/ProfileTable"
 import { List } from "@/components/List"
+import { Display } from "@/components/Display"
 
 export const metadata: Metadata = {
   title: "翡翠 玲夢 | ぷれはぶβ",
@@ -9,13 +10,11 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <>
-      {/* bio_profile */}
-      <div className="py-4 bg-stone-200 text-center">
-        <p className="text-sm">ひすい れむ</p>
-        <p className="font-semibold text-3xl">翡翠 玲夢</p>
+      <div className="bg-warm-50">
+        <Display imgSrc="/sample.png" />
       </div>
       <div className="max-w-xl mx-auto px-6 sm:px-24">
-        <div className="w-full my-12 xl:my-16 xl:mt-16">
+        <div className="w-full my-10 mt-12 xl:my-16 xl:mt-16">
           <p>
             頑固で勝ち気な性格の考古学者。
             運動はあまり得意ではなく、疲れやすい体質。
@@ -29,7 +28,7 @@ export default function Page() {
           <div>
             <List
               label="通過シナリオ"
-              values={["hoge", "fuga", "piyo", "hoge"]}
+              values={["hoge", "fuga", "piyo", "hogehoge"]}
             />
           </div>
         </div>

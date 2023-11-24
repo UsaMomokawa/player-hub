@@ -9,7 +9,7 @@ const meta = {
     imgSrc: "/bio-portrait.png",
   },
   parameters: {
-    layout: "centered",
+    layout: "page",
   },
 } satisfies Meta<typeof Display>
 

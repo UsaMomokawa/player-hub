@@ -10,7 +10,7 @@ interface DisplayProps {
 export const Display = ({ imgSrc = "" }: DisplayProps) => {
   return (
     <>
-      <div className="relative overflow-hidden h-96 w-64 bg-warm-50">
+      <div className="mx-auto relative overflow-hidden h-96 w-auto max-w-sm bg-warm-50">
         <div
           className={twMerge(
             "z-50 bottom-12 absolute px-6 py-1",
@@ -19,13 +19,15 @@ export const Display = ({ imgSrc = "" }: DisplayProps) => {
           )}
         >
           <p className="text-xs leading-4">ひすい れむ</p>
-          <p className="font-semibold text-lg leading-none">翡翠 玲夢</p>
+          <p className="font-semibold text-xl leading-none">翡翠 玲夢</p>
         </div>
-        <div className="z-40 right-0 bottom-0 absolute h-full max-w-fit flex">
+        <div className="z-40 right-3 bottom-0 absolute h-full max-w-fit flex">
           <Image
             src={imgSrc}
-            width={0}
-            height={0}
+            priority={true}
+            quality={100}
+            width={1000}
+            height={1000}
             alt="bio portrait"
             style={{ width: "100%" }}
             className="object-cover fade-in-slow"
@@ -34,8 +36,10 @@ export const Display = ({ imgSrc = "" }: DisplayProps) => {
         <div className="z-10 -left-40 -top-12 absolute opacity-25 flex">
           <Image
             src={imgSrc}
-            width={0}
-            height={0}
+            priority={true}
+            quality={100}
+            width={1000}
+            height={1000}
             alt="bio portrait focused"
             style={{ width: "100%" }}
             className="object-fill fade-in"
