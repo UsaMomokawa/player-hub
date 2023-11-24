@@ -29,15 +29,15 @@ button {
 .checker-pattern {
   background: repeating-linear-gradient(
       0deg,
-      var(--stone-300),
-      var(--stone-300) 1px,
+      var(--stone-200),
+      var(--stone-200) 1px,
       transparent 1px,
       transparent 20px
     ),
     repeating-linear-gradient(
       90deg,
-      var(--stone-300),
-      var(--stone-300) 1px,
+      var(--stone-200),
+      var(--stone-200) 1px,
       transparent 1px,
       transparent 20px
     );
