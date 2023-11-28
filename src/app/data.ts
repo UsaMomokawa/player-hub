@@ -20,12 +20,14 @@ function getBaseUrl(): string {
 export async function fetchCharacters(): Promise<Character[]> {
   try {
     const baseUrl = getBaseUrl()
+    console.log('baseUrl:', baseUrl)
     const res = await fetch(baseUrl + "/characters.json")
     const data = await res.json()
+    console.log('1!!', data)
     return data.characters
   } catch (e) {
-    console.error(e)
-    throw e
+    console.info(e)
+    return []
   }
 }
 
