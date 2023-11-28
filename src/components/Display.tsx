@@ -4,10 +4,12 @@ import "@/styles/SlideInAnimation.css"
 import "@/styles/FadeInAnimation.css"
 
 interface DisplayProps {
+  name: string
+  furigana?: string
   imgSrc: string
 }
 
-export const Display = ({ imgSrc = "" }: DisplayProps) => {
+export const Display = ({ name, furigana, imgSrc = "" }: DisplayProps) => {
   return (
     <>
       <div className="mx-auto relative overflow-hidden h-96 w-auto max-w-sm bg-warm-50">
@@ -18,8 +20,8 @@ export const Display = ({ imgSrc = "" }: DisplayProps) => {
             "slide-in",
           )}
         >
-          <p className="text-xs leading-4">ひすい れむ</p>
-          <p className="font-semibold text-xl leading-none">翡翠 玲夢</p>
+          <p className="text-xs leading-4">{furigana}</p>
+          <p className="font-semibold text-xl leading-none">{name}</p>
         </div>
         <div className="z-40 right-4 bottom-0 absolute h-full max-w-fit flex">
           <Image
@@ -41,7 +43,6 @@ export const Display = ({ imgSrc = "" }: DisplayProps) => {
             width={1000}
             height={1000}
             alt="bio portrait focused"
-            style={{ width: "100%" }}
             className="object-fill fade-in"
           />
         </div>

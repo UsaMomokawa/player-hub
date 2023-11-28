@@ -2,34 +2,57 @@ import { Metadata } from "next"
 import { Table } from "@/components/ProfileTable"
 import { List } from "@/components/List"
 import { Display } from "@/components/Display"
+import { notFound } from "next/navigation"
+import { fetchCharacterById, getCharacterImage } from "@/app/data"
 
-export const metadata: Metadata = {
-  title: "翡翠 玲夢 | ぷれはぶβ",
+export async function generateMetadata({
+  params,
+}: {
+  params: { id: string }
+}): Promise<Metadata> {
+  const id = params.id
+  const character = await fetchCharacterById(id)
+
+  if (!character) {
+    return notFound()
+  }
+
+  return {
+    title: character.name,
+  }
 }
 
-export default function Page() {
+export default async function Page({ params }: { params: { id: string } }) {
+  const id = params.id
+  const character = await fetchCharacterById(id)
+
+  if (!character) {
+    return notFound()
+  }
+
   return (
     <>
       <div className="checker-pattern">
-        <Display imgSrc="/sample.png" />
+        <Display
+          name={character.name}
+          furigana={character.furigana}
+          imgSrc={getCharacterImage(id)}
+        />
       </div>
       <div className="max-w-xl mx-auto px-6 sm:px-24">
         <div className="w-full my-10 mt-12 xl:my-16 xl:mt-16">
-          <p>
-            頑固で勝ち気な性格の考古学者。
-            運動はあまり得意ではなく、疲れやすい体質。
-            規則正しい生活を好み、夜更かしはせず22時に眠る。
-          </p>
+          <p>{character.memo}</p>
         </div>
         <div className="grid grid-cols-1 gap-12 xl:gap-16 xl:mt-16">
           <div>
-            <Table age={20} height={153} birthday={{ month: 2, day: 11 }} />
+            <Table
+              age={character.age}
+              height={character.height}
+              birthday={character.birthday}
+            />
           </div>
           <div>
-            <List
-              label="通過シナリオ"
-              values={["hoge", "fuga", "piyo", "hogehoge"]}
-            />
+            <List label="通過シナリオ" values={character.scenarios} />
           </div>
         </div>
         <div className="pb-24" />

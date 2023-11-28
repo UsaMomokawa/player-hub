@@ -1,43 +1,45 @@
 interface Character {
-  id: string,
-  name: string,
-  furigana?: string,
-  age?: number,
+  id: string
+  name: string
+  furigana?: string
+  age?: number
   birthday?: {
-    month: number,
-    day: number,
-  },
-  height?: number,
-  memo?: string,
-  scenarios?: string[],
+    month: number
+    day: number
+  }
+  height?: number
+  memo?: string
+  scenarios?: string[]
 }
 
 function getBaseUrl(): string {
-  const vc = process.env.VERCEL_URL;
+  const vc = process.env.VERCEL_URL
   if (vc) {
-    return `https://${vc}`;
+    return `https://${vc}`
   } else {
-    return 'http://localhost:3000';
+    return "http://localhost:3000"
   }
 }
 
 export async function fetchCharacters(): Promise<Character[]> {
   try {
-    const baseUrl = getBaseUrl();
-    const res = await fetch(`${baseUrl}/characters.json`);
-    const data = await res.json();
-    return data.characters;
+    const baseUrl = getBaseUrl()
+    const res = await fetch(`${baseUrl}/characters.json`)
+    const data = await res.json()
+    return data.characters
   } catch (e) {
-    console.error(e);
-    throw e;
+    console.error(e)
+    throw e
   }
 }
 
-export async function fetchCharacterById(id: string): Promise<Character | undefined> {
-  const characters = await fetchCharacters();
-  return characters.find((c) => c.id === id);
+export async function fetchCharacterById(
+  id: string,
+): Promise<Character | undefined> {
+  const characters = await fetchCharacters()
+  return characters.find((c) => c.id === id)
 }
 
 export function getCharacterImage(id: string): string {
-  return `/portraits/${id}.png`;
+  return `/portraits/${id}.png`
 }

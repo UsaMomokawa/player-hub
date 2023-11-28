@@ -9,7 +9,10 @@ const notoSansJP = Noto_Sans_JP({
 })
 
 export const metadata: Metadata = {
-  title: "ぷれはぶβ",
+  title: {
+    template: "%s | ぷれはぶβ",
+    default: "ぷれはぶβ",
+  },
   description:
     "ぷれはぶβでは、あなたが作った探索者のプロフィールをひとつのページにまとめて、みんなにシェアできます。",
 }
