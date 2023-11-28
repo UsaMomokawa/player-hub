@@ -10,7 +10,6 @@ const meta = {
   },
   argTypes: {
     hasBackButton: { control: "boolean" },
-    onMenuClick: { action: "menuButtonClicked" },
     onBackClick: { action: "backButtonClicked" },
   },
 } satisfies Meta<typeof Header>
@@ -21,6 +20,7 @@ type Story = StoryObj<typeof meta>
 export const Default: Story = {
   args: {
     hasBackButton: false,
+    label: "Header",
   },
 }
 
