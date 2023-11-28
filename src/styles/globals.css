@@ -13,6 +13,10 @@ button {
   transition: normal, 0.25s, ease, 0s, all;
 }
 
+p {
+  white-space: pre-line;
+}
+
 :root {
   --text: #292524;
   --white: #ffffff;
