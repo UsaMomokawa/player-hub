@@ -2,11 +2,16 @@ import { twMerge } from "tailwind-merge"
 import { BackButton } from "./BackButton"
 
 interface HeaderProps {
+  label?: string
   hasBackButton?: boolean
   onBackClick?: () => void
 }
 
-export const Header = ({ hasBackButton = false, onBackClick }: HeaderProps) => {
+export const Header = ({
+  label,
+  hasBackButton = false,
+  onBackClick,
+}: HeaderProps) => {
   return (
     <header>
       <div
@@ -16,6 +21,7 @@ export const Header = ({ hasBackButton = false, onBackClick }: HeaderProps) => {
         )}
       >
         {hasBackButton && <BackButton onClick={onBackClick} />}
+        <p className="text-stone-500">{label}</p>
       </div>
     </header>
   )

@@ -21,7 +21,7 @@ export const Card = ({ href, imgSrc = "", label, ...props }: CardProps) => {
     >
       <div
         className={twMerge(
-          "relative overflow-hidden h-36 w-36 xl:h-44 xl:w-44 rounded-t-lg",
+          "relative overflow-hidden h-40 w-36 xl:h-48 xl:w-44 rounded-t-lg",
           "border-2 border-b-0 border-stone-200",
           "bg-warm-50",
         )}

@@ -6,17 +6,19 @@ export default async function Page() {
 
   return (
     <>
-      <div className="max-w-xl mx-auto px-6 sm:px-24">
-        <div className="grid grid-cols-2 gap-4 my-10 mt-12 xl:my-16 xl:mt-16">
-          {characters &&
-            characters.map((character) => (
-              <Card
-                href={`/c/${character.id}`}
-                key={character.id}
-                label={character.name}
-                imgSrc={getCharacterImage(character.id)}
-              />
-            ))}
+      <div className="xl:checker-pattern">
+        <div className="max-w-xl mx-auto px-6 sm:px-24">
+          <div className="grid grid-cols-2 gap-6 xl:gap-12 py-10 pt-12 xl:py-16 xl:pt-16">
+            {characters &&
+              characters.map((character) => (
+                <Card
+                  href={`/c/${character.id}`}
+                  key={character.id}
+                  label={character.name}
+                  imgSrc={getCharacterImage(character.id)}
+                />
+              ))}
+          </div>
         </div>
       </div>
     </>
