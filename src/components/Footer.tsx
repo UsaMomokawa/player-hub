@@ -13,9 +13,6 @@ export const Footer = () => {
         <Link href="/">
           <p>ホーム</p>
         </Link>
-        <Link href="https://github.com/UsaMomokawa/player-hub">
-          <p>GitHub</p>
-        </Link>
       </div>
     </footer>
   )
