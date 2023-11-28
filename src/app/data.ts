@@ -24,7 +24,7 @@ function getBaseUrl(): string {
 export async function fetchCharacters(): Promise<Character[]> {
   try {
     const baseUrl = getBaseUrl()
-    const res = await fetch("https://player-fqdobectz-usa-momokawa.vercel.app/characters.json")
+    const res = await fetch(baseUrl + "/characters.json")
 
     console.log("!?!", res.headers.get("content-type"))
 
