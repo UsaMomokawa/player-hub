@@ -6,6 +6,8 @@ const meta = {
   component: Display,
   tags: ["autodocs"],
   args: {
+    name: "翡翠 玲夢",
+    furigana: "ひすい れむ",
     imgSrc: "/bio-portrait.png",
   },
   parameters: {
