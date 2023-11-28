@@ -10,7 +10,6 @@ const meta = {
   },
   argTypes: {
     hasBackButton: { control: "boolean" },
-    onMenuClick: { action: "menuButtonClicked" },
     onBackClick: { action: "backButtonClicked" },
   },
 } satisfies Meta<typeof Header>
