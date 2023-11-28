@@ -25,9 +25,6 @@ export async function fetchCharacters(): Promise<Character[]> {
   try {
     const baseUrl = getBaseUrl()
     const res = await fetch(`${baseUrl}/characters.json`)
-
-    console.log("!!!", res.headers.get("content-type"))
-
     if (!res.ok) {
       throw new Error(`fetch failed: ${res.status}`)
     }
