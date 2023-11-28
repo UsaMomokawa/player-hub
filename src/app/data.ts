@@ -22,9 +22,6 @@ export async function fetchCharacters(): Promise<Character[]> {
   try {
     const baseUrl = getBaseUrl()
     const res = await fetch(baseUrl + "/characters.json")
-
-    console.log("content-type:", res.headers.get("content-type"))
-
     const data = await res.json()
     return data.characters
   } catch (e) {
