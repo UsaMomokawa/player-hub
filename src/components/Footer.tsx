@@ -10,11 +10,8 @@ export const Footer = () => {
           "bg-warm-50 text-stone-500 text-center",
         )}
       >
-        <Link href="/home">
+        <Link href="/">
           <p>ホーム</p>
-        </Link>
-        <Link href="/about">
-          <p>使い方</p>
         </Link>
         <Link href="https://github.com/UsaMomokawa/player-hub">
           <p>GitHub</p>

@@ -1,16 +1,12 @@
 import { twMerge } from "tailwind-merge"
 import { BackButton } from "./BackButton"
-import { useRouter } from "next/router"
 
 interface HeaderProps {
-  hasBackButton?: boolean,
-  onBackClick?: () => void,
+  hasBackButton?: boolean
+  onBackClick?: () => void
 }
 
-export const Header = ({
-  hasBackButton = false,
-  onBackClick,
-}: HeaderProps) => {
+export const Header = ({ hasBackButton = false, onBackClick }: HeaderProps) => {
   return (
     <header>
       <div

@@ -22,7 +22,7 @@ export const Table = ({
             <p>年齢</p>
           </div>
           <div className="profile-content">
-            <p>{age}</p>
+            <p>{age}歳</p>
           </div>
         </div>
       )}

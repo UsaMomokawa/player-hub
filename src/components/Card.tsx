@@ -21,7 +21,7 @@ export const Card = ({ href, imgSrc = "", label, ...props }: CardProps) => {
     >
       <div
         className={twMerge(
-          "relative overflow-hidden h-40 w-40 rounded-t-lg",
+          "relative overflow-hidden h-36 w-36 rounded-t-lg",
           "border-2 border-b-0 border-stone-200",
           "bg-warm-50",
         )}
@@ -29,8 +29,9 @@ export const Card = ({ href, imgSrc = "", label, ...props }: CardProps) => {
         <div className="h-full w-full absolute"></div>
         <Image
           src={imgSrc}
-          width={0}
-          height={0}
+          width={500}
+          height={500}
+          priority={true}
           alt="bio portrait"
           style={{ width: "100%" }}
           className="object-cover"
@@ -38,7 +39,7 @@ export const Card = ({ href, imgSrc = "", label, ...props }: CardProps) => {
       </div>
       <p
         className={twMerge(
-          "inline-block text-center w-full py-3 rounded-b-lg",
+          "inline-block text-center py-3 w-36 rounded-b-lg",
           "border-2 border-t-0 border-stone-200",
           "text-stone-800",
           "bg-white",
