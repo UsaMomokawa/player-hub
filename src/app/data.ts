@@ -14,7 +14,6 @@ interface Character {
 
 function getBaseUrl(): string {
   const vc = process.env.VERCEL_URL
-  console.log("VERCEL_URL", vc)
   return vc ? `https://${vc}` : "http://localhost:3000"
 }
 
