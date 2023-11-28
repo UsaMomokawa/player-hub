@@ -1,0 +1,9 @@
+{
+  "rewrites": [
+    {
+      "source": "/characters.json",
+      "destination": "/characters.json",
+      "headers": { "Content-Type": "application/json" }
+    }
+  ]
+}
