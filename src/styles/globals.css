@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
+html {
   font-size: 18px;
   line-height: 28px;
   font-weight: 400;
@@ -11,6 +11,10 @@ body {
 a,
 button {
   transition: normal, 0.25s, ease, 0s, all;
+}
+
+p {
+  white-space: pre-line;
 }
 
 :root {
@@ -24,4 +28,22 @@ button {
   --stone-300: #d6d3d1;
   --stone-500: #78716c;
   --stone-800: #292524;
+}
+
+.checker-pattern {
+  background: repeating-linear-gradient(
+      0deg,
+      var(--stone-200),
+      var(--stone-200) 1px,
+      transparent 1px,
+      transparent 20px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      var(--stone-200),
+      var(--stone-200) 1px,
+      transparent 1px,
+      transparent 20px
+    );
+  background-size: 20px 20px;
 }

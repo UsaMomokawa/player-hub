@@ -2,12 +2,12 @@ import { twMerge } from "tailwind-merge"
 
 interface ListProps {
   label: string
-  values: string[]
+  values?: string[]
 }
 
 export const List = ({ label, values, ...props }: ListProps) => {
   return (
-    <div className="mx-auto my-8">
+    <div className="mx-auto">
       <div
         className={twMerge(
           "px-2 py-3",
@@ -23,7 +23,7 @@ export const List = ({ label, values, ...props }: ListProps) => {
           "rounded-b-2xl border-2 border-t-0 border-stone-300",
         )}
       >
-        {values.map((value) => (
+        {values?.map((value) => (
           <li
             key={value}
             className={twMerge("pt-3", "list-none text-center")}

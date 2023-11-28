@@ -15,7 +15,7 @@ export const Table = ({
   ...props
 }: ProfileTableProps) => {
   return (
-    <div className="mx-auto my-8 px-4 py-5" {...props}>
+    <div className="mx-auto" {...props}>
       {age && (
         <div className="profile-row">
           <div className="profile-title">
