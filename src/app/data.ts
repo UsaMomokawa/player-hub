@@ -14,11 +14,8 @@ interface Character {
 
 function getBaseUrl(): string {
   const vc = process.env.VERCEL_URL
-  if (vc) {
-    return `https://${vc}`
-  } else {
-    return "http://localhost:3000"
-  }
+  console.log("VERCEL_URL", vc)
+  return vc ? `https://${vc}` : "http://localhost:3000"
 }
 
 export async function fetchCharacters(): Promise<Character[]> {
@@ -26,11 +23,7 @@ export async function fetchCharacters(): Promise<Character[]> {
     const baseUrl = getBaseUrl()
     const res = await fetch(baseUrl + "/characters.json")
 
-    console.log("!?!", res.headers.get("content-type"))
-
-    if (!res.ok) {
-      throw new Error(`fetch failed: ${res.status}`)
-    }
+    console.log("content-type:", res.headers.get("content-type"))
 
     const data = await res.json()
     return data.characters
