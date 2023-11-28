@@ -1,8 +1,8 @@
-import { fetchCharacters, getCharacterImage } from "@/app/data"
+import { getCharacters, getCharacterImage } from "@/app/data"
 import { Card } from "@/components/Card"
 
-export default async function Page() {
-  const characters = await fetchCharacters()
+export default function Page() {
+  const characters = getCharacters()
 
   return (
     <>

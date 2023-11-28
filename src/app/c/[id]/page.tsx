@@ -3,15 +3,15 @@ import { Table } from "@/components/ProfileTable"
 import { List } from "@/components/List"
 import { Display } from "@/components/Display"
 import { notFound } from "next/navigation"
-import { fetchCharacterById, getCharacterImage } from "@/app/data"
+import { getCharacterById, getCharacterImage } from "@/app/data"
 
-export async function generateMetadata({
+export function generateMetadata({
   params,
 }: {
   params: { id: string }
-}): Promise<Metadata> {
+}): Metadata {
   const id = params.id
-  const character = await fetchCharacterById(id)
+  const character = getCharacterById(id)
 
   if (!character) {
     return notFound()
@@ -22,9 +22,9 @@ export async function generateMetadata({
   }
 }
 
-export default async function Page({ params }: { params: { id: string } }) {
+export default function Page({ params }: { params: { id: string } }) {
   const id = params.id
-  const character = await fetchCharacterById(id)
+  const character = getCharacterById(id)
 
   if (!character) {
     return notFound()
