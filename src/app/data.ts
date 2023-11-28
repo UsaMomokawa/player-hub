@@ -24,9 +24,9 @@ function getBaseUrl(): string {
 export async function fetchCharacters(): Promise<Character[]> {
   try {
     const baseUrl = getBaseUrl()
-    console.log('!!!', baseUrl)
     const res = await fetch(`${baseUrl}/characters.json`)
     const data = await res.json()
+    console.log('!!!!', data.characters)
     return data.characters
   } catch (e) {
     console.error(e)
