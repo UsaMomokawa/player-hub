@@ -29,10 +29,10 @@ export const Card = ({ href, imgSrc = "", label, ...props }: CardProps) => {
         <div className="h-full w-full absolute"></div>
         <Image
           src={imgSrc}
-          width={500}
-          height={500}
+          width={250}
+          height={250}
           priority={true}
-          alt="bio portrait"
+          alt="portrait"
           style={{ width: "100%" }}
           className="object-cover"
         />
