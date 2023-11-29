@@ -2,6 +2,7 @@ import { Metadata } from "next"
 import { Table } from "@/components/ProfileTable"
 import { List } from "@/components/List"
 import { Display } from "@/components/Display"
+import { Container } from "@/components/Container"
 import { notFound } from "next/navigation"
 import { getCharacterById, getCharacterImage } from "@/app/data"
 
@@ -39,7 +40,7 @@ export default async function Page({ params }: { params: { id: string } }) {
           imgSrc={getCharacterImage(id)}
         />
       </div>
-      <div className="max-w-xl mx-auto px-6 sm:px-24">
+      <Container className="max-w-xl">
         <div className="w-full my-10 mt-12 xl:my-16 xl:mt-16">
           <p>{character.memo}</p>
         </div>
@@ -56,7 +57,7 @@ export default async function Page({ params }: { params: { id: string } }) {
           </div>
         </div>
         <div className="pb-24" />
-      </div>
+      </Container>
     </>
   )
 }

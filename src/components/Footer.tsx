@@ -13,6 +13,9 @@ export const Footer = () => {
         <Link href="/">
           <p>ホーム</p>
         </Link>
+        <Link href="/sort">
+          <p>探索者ソート</p>
+        </Link>
       </div>
     </footer>
   )
