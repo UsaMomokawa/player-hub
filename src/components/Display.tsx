@@ -35,7 +35,7 @@ export const Display = ({ name, furigana, imgSrc = "" }: DisplayProps) => {
             className="object-contain aspect-auto fade-in-slow"
           />
         </div>
-        <div className="z-10 absolute -left-40 -top-12 opacity-25 flex">
+        <div className="z-0 absolute -left-40 -top-12 opacity-25 flex">
           <Image
             src={imgSrc}
             priority={true}

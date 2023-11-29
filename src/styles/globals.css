@@ -17,6 +17,10 @@ p {
   white-space: pre-line;
 }
 
+img {
+  user-select: none;
+}
+
 :root {
   --text: #292524;
   --white: #ffffff;

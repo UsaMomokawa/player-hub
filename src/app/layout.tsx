@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import { Noto_Sans_JP } from "next/font/google"
 import { twMerge } from "tailwind-merge"
+import { Providers } from "./providers"
 import "@/styles/globals.css"
 
 const notoSansJP = Noto_Sans_JP({
@@ -14,7 +15,7 @@ export const metadata: Metadata = {
     default: "ぷれはぶβ",
   },
   description:
-    "ぷれはぶβでは、あなたが作った探索者のプロフィールをひとつのページにまとめて、みんなにシェアできます。",
+    "ぷれはぶβでは、あなたが作った探索者のプロフィールをひとつのページにまとめて、みんなにシェアできます",
 }
 
 export default function RootLayout({
@@ -25,7 +26,7 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <body className={twMerge(notoSansJP.variable, "font-sans")}>
-        {children}
+        <Providers>{children}</Providers>
       </body>
     </html>
   )
