@@ -15,7 +15,7 @@ export const Display = ({ name, furigana, imgSrc = "" }: DisplayProps) => {
       <div className="mx-auto relative overflow-hidden h-96 w-auto max-w-sm bg-warm-50">
         <div
           className={twMerge(
-            "z-50 bottom-12 absolute px-6 py-1",
+            "z-50 absolute bottom-12 px-6 py-1",
             "drop-shadow-md shadow-stone-400 bg-stone-700 text-warm-50 tracking-wide",
             "slide-in",
           )}
@@ -23,7 +23,7 @@ export const Display = ({ name, furigana, imgSrc = "" }: DisplayProps) => {
           <p className="text-xs leading-4">{furigana}</p>
           <p className="font-semibold text-xl leading-none">{name}</p>
         </div>
-        <div className="z-40 right-4 bottom-0 absolute h-full max-w-fit flex">
+        <div className="z-40 absolute right-4 bottom-0 h-full max-h-max w-fit flex">
           <Image
             src={imgSrc}
             priority={true}
@@ -35,7 +35,7 @@ export const Display = ({ name, furigana, imgSrc = "" }: DisplayProps) => {
             className="object-cover fade-in-slow"
           />
         </div>
-        <div className="z-10 -left-40 -top-12 absolute opacity-25 flex">
+        <div className="z-10 absolute -left-40 -top-12 opacity-25 flex">
           <Image
             src={imgSrc}
             priority={true}
