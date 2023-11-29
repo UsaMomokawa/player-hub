@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     default: "ぷれはぶβ",
   },
   description:
-    "ぷれはぶβでは、あなたが作った探索者のプロフィールをひとつのページにまとめて、みんなにシェアできます。",
+    "ぷれはぶβでは、あなたが作った探索者のプロフィールをひとつのページにまとめて、みんなにシェアできます",
 }
 
 export default function RootLayout({
