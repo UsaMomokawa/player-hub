@@ -5,13 +5,13 @@ import { Display } from "@/components/Display"
 import { notFound } from "next/navigation"
 import { getCharacterById, getCharacterImage } from "@/app/data"
 
-export function generateMetadata({
+export async function generateMetadata({
   params,
 }: {
   params: { id: string }
-}): Metadata {
+}): Promise<Metadata> {
   const id = params.id
-  const character = getCharacterById(id)
+  const character = await getCharacterById(id)
 
   if (!character) {
     return notFound()
@@ -22,9 +22,9 @@ export function generateMetadata({
   }
 }
 
-export default function Page({ params }: { params: { id: string } }) {
+export default async function Page({ params }: { params: { id: string } }) {
   const id = params.id
-  const character = getCharacterById(id)
+  const character = await getCharacterById(id)
 
   if (!character) {
     return notFound()

@@ -1,6 +1,6 @@
 "use client"
 import React from "react"
-import { getCharacters, getCharacterImage, Character } from "@/app/data"
+import { getCharacters } from "@/app/data"
 import { useAsyncList } from "@react-stately/data"
 import {
   Table,
@@ -17,8 +17,8 @@ export default function Page() {
   const [isLoading, setIsLoading] = React.useState(true)
 
   let list = useAsyncList({
-    load() {
-      const characters = getCharacters()
+    async load() {
+      const characters = await getCharacters()
       setIsLoading(false)
       return {
         items: characters,
@@ -26,10 +26,9 @@ export default function Page() {
     },
 
     async sort({ items, sortDescriptor }) {
-      console.log("sort", sortDescriptor)
       return {
         items: items.sort((a, b) => {
-          let key = sortDescriptor.column || "age"
+          let key = sortDescriptor.column
           let first = a[key as keyof typeof a]
           let second = b[key as keyof typeof b]
 

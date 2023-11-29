@@ -1,8 +1,8 @@
 import { getCharacters, getCharacterImage } from "@/app/data"
 import { Card } from "@/components/Card"
 
-export default function Page() {
-  const characters = getCharacters()
+export default async function Page() {
+  const characters = await getCharacters()
 
   return (
     <>

@@ -12,11 +12,13 @@ export interface Character {
   scenarios?: string[]
 }
 
-export function getCharacters(): Character[] {
+export async function getCharacters(): Promise<Character[]> {
   return characters
 }
 
-export function getCharacterById(id: string): Character | undefined {
+export async function getCharacterById(
+  id: string,
+): Promise<Character | undefined> {
   return characters.find((c) => c.id === id)
 }
 
