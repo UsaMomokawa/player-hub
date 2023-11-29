@@ -1,5 +1,5 @@
-'use client';
-
+"use client"
+import React from "react"
 import { getCharacters, getCharacterImage, Character } from "@/app/data"
 import { useAsyncList } from "@react-stately/data"
 import {
@@ -10,36 +10,78 @@ import {
   TableRow,
   TableCell,
   getKeyValue,
-  // Spinner,
+  Spinner,
 } from "@nextui-org/react"
 
-// interface SortDescriptor {
-//   column: string
-//   direction: "asc" | "desc"
-// }
-
 export default function Page() {
-  const characters: Character[] = getCharacters()
-  const columns = [
-    { key: "name", label: "名前" },
-    { key: "age", label: "年齢(歳)" },
-    { key: "height", label: "身長(cm)" },
-  ]
+  const [isLoading, setIsLoading] = React.useState(true)
+
+  let list = useAsyncList({
+    load() {
+      const characters = getCharacters()
+      setIsLoading(false)
+      return {
+        items: characters,
+      }
+    },
+
+    async sort({ items, sortDescriptor }) {
+      console.log("sort", sortDescriptor)
+      return {
+        items: items.sort((a, b) => {
+          let key = sortDescriptor.column || "age"
+          let first = a[key as keyof typeof a]
+          let second = b[key as keyof typeof b]
+
+          // 値が設定されていない場合は並び順を後ろにする
+          if (first === undefined) {
+            return 1
+          }
+          if (second === undefined) {
+            return -1
+          }
+
+          let cmp = 0
+          if (first < second) {
+            cmp = -1
+          } else if (first > second) {
+            cmp = 1
+          }
+          if (sortDescriptor.direction === "descending") {
+            cmp *= -1
+          }
+          return cmp
+        }),
+      }
+    },
+  })
 
   return (
     <div className="p-32">
-      <Table>
+      <Table
+        sortDescriptor={list.sortDescriptor}
+        onSortChange={list.sort}
+        aria-label="探索者ソート"
+      >
         <TableHeader>
-          {columns.map(({ key, label }) => (
-            <TableColumn key={key}>{label}</TableColumn>
-          ))}
+          <TableColumn key="name">名前</TableColumn>
+          <TableColumn allowsSorting key="age">
+            年齢
+          </TableColumn>
+          <TableColumn allowsSorting key="height">
+            身長
+          </TableColumn>
         </TableHeader>
-        <TableBody>
-          {characters.map((character) => (
-            <TableRow key={character.id}>
-              {(columnKey) => <TableCell>{getKeyValue(character, columnKey)}</TableCell>}
+        <TableBody
+          items={list.items}
+          isLoading={isLoading}
+          loadingContent={<Spinner label="読み込み中..." />}
+        >
+          {(item) => (
+            <TableRow key={item.name}>
+              {(column) => <TableCell>{getKeyValue(item, column)}</TableCell>}
             </TableRow>
-          ))}
+          )}
         </TableBody>
       </Table>
     </div>
