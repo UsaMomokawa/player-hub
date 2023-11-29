@@ -39,7 +39,7 @@ export const Card = ({ href, imgSrc = "", label, ...props }: CardProps) => {
       </div>
       <span
         className={twMerge(
-          "z-30 absolute text-center py-3 w-full rounded-b-lg",
+          "z-30 absolute text-center py-3 px-2 w-full rounded-b-lg",
           "border-2 border-t-0 border-stone-200",
           "text-stone-800",
           "bg-white",

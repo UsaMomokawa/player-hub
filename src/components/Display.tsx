@@ -23,7 +23,7 @@ export const Display = ({ name, furigana, imgSrc = "" }: DisplayProps) => {
           <p className="text-xs leading-4">{furigana}</p>
           <p className="font-semibold text-xl leading-none">{name}</p>
         </div>
-        <div className="z-40 absolute right-4 bottom-0 h-full max-h-max w-fit flex">
+        <div className="z-40 absolute right-4 sm:right-0 top-0 h-full max-h-max w-fit flex">
           <Image
             src={imgSrc}
             priority={true}
