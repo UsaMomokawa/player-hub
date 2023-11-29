@@ -16,7 +16,7 @@ export const Header = ({
     <header>
       <div
         className={twMerge(
-          "sticky flex flex-row p-6 xl:px-16 items-center justify-between",
+          "sticky flex flex-row p-6 md:px-24 items-center justify-between",
           "bg-white",
         )}
       >

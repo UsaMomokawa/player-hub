@@ -7,8 +7,8 @@ export default function Page() {
   return (
     <>
       <div className="xl:checker-pattern">
-        <div className="max-w-xl mx-auto px-6 sm:px-24">
-          <div className="grid grid-cols-2 gap-6 xl:gap-12 py-10 pt-12 xl:py-16 xl:pt-16">
+        <div className="mx-auto px-6 md:px-24">
+          <div className="grid grid-cols-2 xl:grid-cols-4 gap-6 md:gap-12 py-10 pt-12 xl:py-16 xl:pt-16">
             {characters &&
               characters.map((character) => (
                 <Card
