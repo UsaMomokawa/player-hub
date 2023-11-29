@@ -61,6 +61,7 @@ export const CharacterSortTable = () => {
       onSortChange={list.sort}
       aria-label="探索者ソート"
       aria-sort="ascending"
+      isStriped
     >
       <TableHeader>
         <TableColumn key="name">名前</TableColumn>
