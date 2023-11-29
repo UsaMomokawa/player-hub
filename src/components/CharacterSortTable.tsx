@@ -13,10 +13,10 @@ import {
   Spinner,
 } from "@nextui-org/react"
 
-export const CharacterSortTable = ({}) => {
+export const CharacterSortTable = () => {
   const [isLoading, setIsLoading] = React.useState(true)
 
-  let list = useAsyncList({
+  const list = useAsyncList({
     async load() {
       const characters = await getCharacters()
       setIsLoading(false)
@@ -28,9 +28,9 @@ export const CharacterSortTable = ({}) => {
     async sort({ items, sortDescriptor }) {
       return {
         items: items.sort((a, b) => {
-          let key = sortDescriptor.column
-          let first = a[key as keyof typeof a]
-          let second = b[key as keyof typeof b]
+          const key = sortDescriptor.column
+          const first = a[key as keyof typeof a]
+          const second = b[key as keyof typeof b]
 
           // 値が設定されていない場合は並び順を後ろにする
           if (first === undefined) {
