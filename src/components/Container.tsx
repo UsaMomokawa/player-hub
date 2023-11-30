@@ -9,10 +9,7 @@ export const Container = ({
   ...props
 }: ContainerProps) => {
   return (
-    <div
-      className={`max-w-screen-xl mx-auto px-6 sm:px-24 ${className}`}
-      {...props}
-    >
+    <div className={`mx-auto px-6 sm:px-24 ${className}`} {...props}>
       {children}
     </div>
   )
