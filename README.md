@@ -24,6 +24,7 @@ $ npm run format
 [📕 Storybook](https://github.com/UsaMomokawa/player-hub/tree/main/src/stories/)
 
 ### 👟 Milestone
+
 #### v0.1
 
 - プロフィール、ソート機能実装
