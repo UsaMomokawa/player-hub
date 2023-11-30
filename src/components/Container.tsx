@@ -5,12 +5,12 @@ interface ContainerProps {
 
 export const Container = ({
   children,
-  className,
+  className = "",
   ...props
 }: ContainerProps) => {
   return (
     <div
-      className={`max-w-screen-2xl mx-auto px-6 sm:px-24 ${className}`}
+      className={`max-w-screen-xl mx-auto px-6 sm:px-24 ${className}`}
       {...props}
     >
       {children}

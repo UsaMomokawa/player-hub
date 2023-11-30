@@ -40,7 +40,7 @@ export default async function Page({ params }: { params: { id: string } }) {
           imgSrc={getCharacterImage(id)}
         />
       </div>
-      <Container className="max-w-xl">
+      <Container className="max-w-screen-md">
         <div className="w-full my-10 mt-12 xl:my-16 xl:mt-16">
           <p>{character.memo}</p>
         </div>

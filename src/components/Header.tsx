@@ -1,5 +1,6 @@
 import { twMerge } from "tailwind-merge"
 import { BackButton } from "./BackButton"
+import { Container } from "@/components/Container"
 
 interface HeaderProps {
   label?: string
@@ -14,14 +15,18 @@ export const Header = ({
 }: HeaderProps) => {
   return (
     <header>
-      <div
-        className={twMerge(
-          "sticky flex flex-row p-6 sm:px-24 items-center justify-between",
-          "bg-white",
-        )}
-      >
-        {hasBackButton && <BackButton onClick={onBackClick} />}
-        <p className="text-stone-500">{label}</p>
+      <div className="sticky w-full">
+        <Container>
+          <div
+            className={twMerge(
+              "flex flex-row py-6 items-center justify-between",
+              "bg-white",
+            )}
+          >
+            {hasBackButton && <BackButton onClick={onBackClick} />}
+            <p className="text-stone-500">{label}</p>
+          </div>
+        </Container>
       </div>
     </header>
   )
