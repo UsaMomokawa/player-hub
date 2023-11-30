@@ -16,7 +16,7 @@ export const Header = ({
   return (
     <header>
       <div className="sticky w-full">
-        <Container className="max-w-screen-xl">
+        <Container>
           <div
             className={twMerge(
               "flex flex-row py-6 items-center justify-between",
