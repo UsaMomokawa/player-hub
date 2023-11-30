@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
-    <Container className="max-w-3xl">
+    <Container className="max-w-screen-md">
       <div className="pt-12 pb-24">
         <CharacterSortTable />
       </div>
